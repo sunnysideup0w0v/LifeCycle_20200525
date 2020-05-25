@@ -16,6 +16,6 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("secondActivity", "onDestroy실행");
+        Log.d("secondActivity", "onDestroy실행!");
     }
 }
