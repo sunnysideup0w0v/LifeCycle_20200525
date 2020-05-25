@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.lifecycle_20200525.databinding.ActivityMainBinding;
+
+import java.util.Calendar;
 
 public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
@@ -33,6 +36,19 @@ public class MainActivity extends BaseActivity {
         super.onPause();
         Log.d("생명주기확인","onPause실행");
     }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        long now = System.currentTimeMillis();
+        if(now - lastBackTime > 1000){
+            Toast.makeText(mContext, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+        } else {
+            finish();
+        }
+        lastBackTime = now;
+    }
+
 
     @Override
     public void setupEvents() {
