@@ -23,6 +23,12 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("생명주기확인","onResume실행");
+    }
+
+    @Override
     public void setupEvents() {
         binding.moveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
